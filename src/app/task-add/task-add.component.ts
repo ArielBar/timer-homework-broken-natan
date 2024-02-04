@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   Validators,
@@ -13,6 +13,7 @@ import { of } from 'rxjs';
   selector: 'app-task-add',
   templateUrl: './task-add.component.html',
   styleUrls: ['./task-add.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskAddComponent implements OnInit {
   form: FormGroup;
