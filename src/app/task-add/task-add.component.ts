@@ -16,7 +16,7 @@ import { of } from 'rxjs';
 })
 export class TaskAddComponent implements OnInit {
   form: FormGroup;
-  constructor(private fb: FormBuilder, private service: LogicService) {}
+  constructor(private fb: FormBuilder, private service: LogicService) { }
   ngOnInit(): void {
     this.form = this.fb.group({
       text: [
@@ -28,10 +28,6 @@ export class TaskAddComponent implements OnInit {
   }
   submitHandler(text: string) {
     this.service.addTask(text);
-    this.resetForm();
-  }
-  private resetForm() {
-    this.form.reset();
   }
 
   validateNameExists(control: AbstractControl) {

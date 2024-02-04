@@ -1,4 +1,4 @@
-<form [formGroup]="form" novalidate (ngSubmit)="submitHandler(form.value.text)">
+<form #myForm [formGroup]="form" novalidate (ngSubmit)="submitHandler(form.value.text); myForm.reset()">
   <mat-card class="add-card">
     <mat-card-content>
       <div class="row">
@@ -9,19 +9,12 @@
           </mat-error>
         </mat-form-field>
         <div *ngIf="form.get('text')?.status === 'PENDING'">Checking...</div>
-        <div
-          *ngIf="
+        <div *ngIf="
             form.get('text')?.errors && form.get('text')?.errors['nameTaken']
-          "
-        >
+          ">
           😢 Oh noes, this task is already exists!
         </div>
-        <button
-          color="primary"
-          mat-raised-button
-          [disabled]="!form.valid"
-          type="submit"
-        >
+        <button color="primary" mat-raised-button [disabled]="!form.valid" type="submit">
           Add
         </button>
       </div>
