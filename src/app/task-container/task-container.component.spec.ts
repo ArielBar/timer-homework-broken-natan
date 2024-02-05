@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Input, Component } from '@angular/core';
 import { TaskModel } from '../models/task-model';
+import { buttonText } from '../models/button-text.enum';
 import { LogicService } from '../logic.service';
 import { TaskContainerComponent } from './task-container.component';
 import { MatCardModule } from '@angular/material/card';
@@ -48,7 +49,7 @@ describe('TaskContainerComponent', () => {
         id: -1,
         name: '',
         timer: of(),
-        buttonText: 'play_arrow',
+        buttonText: buttonText.play_arrow,
       };
       const logicServiceStub: LogicService =
         fixture.debugElement.injector.get(LogicService);
@@ -72,9 +73,9 @@ describe('TaskContainerComponent', () => {
       const logicServiceStub: LogicService =
         fixture.debugElement.injector.get(LogicService);
       const tasks: TaskModel[] = [
-        { id: 1, name: 'test1', buttonText: 'pause', timer: of(1) },
-        { id: 2, name: 'test2', buttonText: 'pause', timer: of(1) },
-        { id: 3, name: 'test3', buttonText: 'pause', timer: of(1) },
+        { id: 1, name: 'test1', buttonText: buttonText.pause, timer: of(1) },
+        { id: 2, name: 'test2', buttonText: buttonText.pause, timer: of(1) },
+        { id: 3, name: 'test3', buttonText: buttonText.pause, timer: of(1) },
       ];
       jest.spyOn(logicServiceStub, 'tasks$', 'get').mockReturnValue(of(tasks));
       fixture.detectChanges();

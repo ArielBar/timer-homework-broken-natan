@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { of } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { buttonText } from '../models/button-text.enum';
 
 describe('TaskPresenterComponent', () => {
   let component: TaskPresenterComponent;
@@ -36,7 +37,7 @@ describe('TaskPresenterComponent', () => {
     component.task = {
       id: 1,
       name: 'some name',
-      buttonText: 'pause',
+      buttonText: buttonText.pause,
       timer: of(10),
     };
     // Act
