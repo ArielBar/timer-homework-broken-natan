@@ -21,6 +21,7 @@ export class TaskPresenterComponent {
   @Input() task: TaskModel;
   @Output() clicked = new EventEmitter<TaskModel>();
 
+
   public click() {
     this.clicked.emit(this.task);
   }
