@@ -2,7 +2,7 @@
 
 exports[`TaskContainerComponent DOM should render tasks$ 1`] = `
 <div
-  id="root3"
+  id="root4"
 >
   <mat-card
     class="mat-card mat-focus-indicator"
@@ -53,7 +53,7 @@ exports[`TaskContainerComponent DOM should render tasks$ 1`] = `
 
 exports[`TaskContainerComponent DOM should render totalTime$ 1`] = `
 <div
-  id="root2"
+  id="root3"
 >
   <mat-card
     class="mat-card mat-focus-indicator"

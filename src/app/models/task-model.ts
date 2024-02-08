@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { buttonText } from './button-text';
+import { buttonText } from './button-text.enum';
 
 export interface TaskModel {
   id: number;
