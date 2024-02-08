@@ -43,6 +43,18 @@ describe('TaskContainerComponent', () => {
   it('can load instance', () => {
     expect(component).toBeTruthy();
   });
+  describe('ngOnInit', () => {
+    it('should initialize tasks$ and totalTime$ properties', () => {
+      const logicServiceStub: LogicService =
+        fixture.debugElement.injector.get(LogicService);
+      jest.spyOn(logicServiceStub, 'tasks$', 'get').mockReturnValue(of([]));
+      jest.spyOn(logicServiceStub, 'totalTime$', 'get').mockReturnValue(of(1));
+      component.ngOnInit();
+      expect(component.tasks$).toBeDefined();
+      expect(component.totalTime$).toBeDefined();
+    });
+
+  });
   describe('onClick', () => {
     it('makes expected calls', () => {
       const taskModelStub: TaskModel = {
