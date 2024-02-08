@@ -63,11 +63,7 @@ export class LogicService {
   }
 
   private toggleText(tsk: TaskModel): void {
-    if (tsk.buttonText === buttonText.play_arrow) {
-      this.setPlay(tsk);
-    } else {
-      this.setPause(tsk);
-    }
+    (tsk.buttonText === buttonText.play_arrow) ? this.setPlay(tsk) : this.setPause(tsk)
   }
 
   private setPlay(tsk: TaskModel): void {
